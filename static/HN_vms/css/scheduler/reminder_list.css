@@ -1,0 +1,214 @@
+.reminder-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filters-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.filter-group label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+}
+
+.filter-group select {
+    padding: 0.55rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface-muted);
+    color: var(--text);
+    min-width: 150px;
+}
+
+.filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-left: auto;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn i {
+    width: 15px;
+    height: 15px;
+}
+
+.filter-btn-primary {
+    background: var(--accent);
+    color: var(--surface);
+}
+
+.filter-btn-primary:hover {
+    opacity: 0.9;
+}
+
+.filter-btn-clear {
+    background: var(--surface-muted);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.filter-btn-clear:hover {
+    background: var(--surface);
+}
+
+.reminders-table-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.reminders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reminders-table th,
+.reminders-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.reminders-table th {
+    background: var(--surface-muted);
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+}
+
+.reminders-table tr:hover {
+    background: var(--surface-muted);
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: var(--surface-muted);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.status-badge.status-sent { background: var(--surface-muted); color: var(--text); border: 1px solid var(--border); }
+.status-badge.status-pending { background: var(--surface-muted); color: var(--text); border: 1px solid var(--border); }
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.delete-form {
+    display: inline-flex;
+    margin: 0;
+}
+
+.action-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.action-icon-btn i {
+    width: 16px;
+    height: 16px;
+}
+
+.action-icon-btn:hover {
+    transform: translateY(-1px);
+}
+
+.action-icon-btn.action-view:hover {
+    background: var(--accent);
+    color: var(--surface);
+    border-color: var(--accent);
+}
+
+.action-icon-btn.action-send {
+    background: var(--action-add);
+    color: var(--surface);
+    border-color: var(--action-add);
+}
+
+.action-icon-btn.action-send:hover {
+    opacity: 0.9;
+}
+
+.action-icon-btn.action-delete {
+    background: var(--surface-muted);
+    color: var(--action-delete);
+    border-color: var(--border);
+}
+
+.action-icon-btn.action-delete:hover {
+    background: var(--action-delete);
+    color: var(--surface);
+    border-color: var(--action-delete);
+}
+
+.no-data {
+    text-align: center;
+    padding: 3rem;
+    color: var(--muted);
+}
+
+.no-data p {
+    margin-bottom: 1rem;
+}

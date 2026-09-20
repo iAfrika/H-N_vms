@@ -1,0 +1,340 @@
+/* Scheduler dashboard - modern, consistent with the rest of the app */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+/* Stats */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: var(--surface-muted);
+    color: var(--accent);
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+}
+
+.stat-icon .sidebar-nav-icon,
+.stat-icon svg,
+.stat-icon i {
+    width: 22px;
+    height: 22px;
+    color: currentColor;
+}
+
+.stat-info {
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.15rem;
+}
+
+.stat-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* Sections */
+.dashboard-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.dashboard-section h2 {
+    margin: 0 0 1.25rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.02em;
+}
+
+.no-data {
+    color: var(--muted);
+    font-style: normal;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+/* Appointment / message lists */
+.appointment-list,
+.message-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.appointment-card,
+.message-card {
+    background: var(--surface-muted);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) - 6px);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.2s ease;
+}
+
+.appointment-card:hover,
+.message-card:hover {
+    background: var(--surface);
+    border-color: var(--accent-soft);
+    transform: translateX(3px);
+}
+
+.appointment-icon,
+.message-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--accent);
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.appointment-icon .sidebar-nav-icon,
+.message-icon .sidebar-nav-icon,
+.appointment-icon svg,
+.message-icon svg {
+    width: 20px;
+    height: 20px;
+    color: currentColor;
+}
+
+.appointment-confirmed .appointment-icon { color: var(--action-add); border-color: var(--action-add); }
+.appointment-completed .appointment-icon { color: var(--action-share); border-color: var(--action-share); }
+.appointment-cancelled .appointment-icon { color: var(--action-delete); border-color: var(--action-delete); }
+
+.message-sent .message-icon { color: var(--action-add); border-color: var(--action-add); }
+.message-failed .message-icon { color: var(--action-delete); border-color: var(--action-delete); }
+
+.appointment-time,
+.appointment-date {
+    font-weight: 700;
+    color: var(--text);
+    min-width: 64px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.appointment-details,
+.message-details {
+    flex: 1;
+    display: grid;
+    gap: 0.15rem;
+}
+
+.appointment-client,
+.message-subject {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.appointment-service,
+.message-client {
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.appointment-status,
+.message-status {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: transparent;
+    border: 1px solid currentColor;
+    text-transform: capitalize;
+}
+
+.appointment-status::before,
+.message-status::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.status-scheduled { color: var(--action-share); }
+.status-confirmed { color: var(--action-add); }
+.status-completed { color: var(--action-share); }
+.status-cancelled { color: var(--action-delete); }
+.status-no_show { color: var(--accent-soft); }
+.status-draft { color: var(--muted); }
+.status-sent { color: var(--action-add); }
+.status-failed { color: var(--action-delete); }
+
+/* Actions */
+.appointment-actions {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.appointment-actions .btn {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: all 0.15s ease;
+}
+
+.appointment-actions .btn:hover {
+    background: transparent;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.appointment-actions .btn svg,
+.appointment-actions .btn i {
+    width: 18px;
+    height: 18px;
+}
+
+.appointment-actions .btn-success {
+    color: var(--action-add);
+    border-color: var(--action-add);
+}
+
+.appointment-actions .btn-success:hover {
+    color: var(--action-add);
+    border-color: var(--action-add);
+}
+
+.message-time {
+    font-size: 0.75rem;
+    color: var(--muted);
+    min-width: 80px;
+    text-align: right;
+}
+
+/* Quick actions */
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.action-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    background: var(--surface-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s ease;
+}
+
+.action-card:hover {
+    background: var(--surface);
+    border-color: var(--accent-soft);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.action-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--accent);
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.action-icon .sidebar-nav-icon,
+.action-icon svg,
+.action-icon i {
+    width: 22px;
+    height: 22px;
+    color: currentColor;
+}
+
+.action-card:nth-child(1) .action-icon { color: var(--action-share); border-color: var(--action-share); }
+.action-card:nth-child(2) .action-icon { color: var(--action-add); border-color: var(--action-add); }
+.action-card:nth-child(3) .action-icon { color: var(--action-delete); border-color: var(--action-delete); }
+.action-card:nth-child(4) .action-icon { color: var(--accent); border-color: var(--accent); }
+
+.action-text {
+    flex: 1;
+}
+
+.action-title {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.15rem;
+    font-size: 0.95rem;
+}
+
+.action-subtitle {
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-row,
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-card,
+    .message-card {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .appointment-actions,
+    .message-time {
+        margin-left: auto;
+    }
+}

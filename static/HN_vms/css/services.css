@@ -1,0 +1,277 @@
+/* Modern minimalist services page styling */
+.services-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.services-header p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.services-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.services-table thead {
+    background: var(--surface-muted);
+    border-bottom: 2px solid var(--border);
+}
+
+.services-table th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.services-table th:first-child {
+    border-top-left-radius: calc(var(--radius) - 1px);
+}
+
+.services-table th:last-child {
+    border-top-right-radius: calc(var(--radius) - 1px);
+}
+
+.services-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s ease;
+}
+
+.services-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.services-table tbody tr:hover {
+    background: var(--surface-muted);
+}
+
+.services-table td {
+    padding: 1rem 1.2rem;
+    vertical-align: middle;
+}
+
+.services-table .price-cell {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.services-table .actions-cell {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.services-table .action-link {
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.services-table .action-link.edit {
+    background: var(--surface-muted);
+    color: var(--accent);
+    border: 1px solid var(--border);
+}
+
+.services-table .action-link.edit:hover {
+    background: var(--accent);
+    color: var(--surface);
+    border-color: var(--accent);
+}
+
+.services-table .action-link.delete {
+    background: transparent;
+    color: var(--action-delete);
+    border: 1px solid transparent;
+}
+
+.services-table .action-link.delete:hover {
+    background: var(--action-delete);
+    color: var(--surface);
+}
+
+.services-table .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--muted);
+}
+
+.services-table .empty-state td {
+    padding: 3rem 1rem;
+    font-size: 0.95rem;
+}
+
+.services-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.services-actions a {
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--accent);
+    color: var(--surface);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.services-actions a:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent-soft);
+    transform: translateY(-1px);
+}
+
+.services-table .price-cell {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.services-table .action-btn {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--muted);
+}
+
+.services-table .action-btn:hover {
+    background: transparent;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.services-table .action-btn.action-delete:hover {
+    border-color: var(--action-delete);
+    color: var(--action-delete);
+}
+
+.pos-page-header .primary-action.add-service {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.pos-page-header .primary-action.add-service:hover {
+    background: var(--surface-muted);
+    color: var(--accent);
+}
+
+/* Modern list layout for services */
+.service-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s ease;
+}
+
+.service-item:last-child {
+    border-bottom: none;
+}
+
+.service-item:hover {
+    background: var(--surface-muted);
+}
+
+.service-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.service-name {
+    color: var(--text);
+    font-weight: 500;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.service-desc {
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.4;
+    display: block;
+}
+
+.service-price {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.service-actions {
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+}
+
+.service-actions .action-btn {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--muted);
+}
+
+.service-actions .action-btn:hover {
+    background: transparent;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.service-actions .action-btn.action-delete:hover {
+    border-color: var(--action-delete);
+    color: var(--action-delete);
+}
+
+@media (max-width: 768px) {
+    .services-table th,
+    .services-table td {
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .services-table th {
+        font-size: 0.7rem;
+    }
+
+    .services-table .actions-cell {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .services-header p {
+        font-size: 0.9rem;
+    }
+}

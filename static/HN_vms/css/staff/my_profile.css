@@ -1,0 +1,118 @@
+.profile-card {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.profile-avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--border);
+    background: var(--surface-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+.profile-avatar-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-title h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.profile-title p {
+    margin: 0.25rem 0 0;
+    color: var(--muted);
+}
+.profile-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--surface-muted);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+}
+.profile-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+}
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.field-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.field-group input,
+.field-group select,
+.field-group textarea {
+    padding: 0.7rem 0.85rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+}
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: none;
+}
+.help-text {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+.error-text {
+    font-size: 0.75rem;
+    color: var(--action-delete);
+}
+.profile-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+@media (max-width: 560px) {
+    .profile-fields {
+        grid-template-columns: 1fr;
+    }
+    .profile-actions {
+        flex-direction: column;
+    }
+}

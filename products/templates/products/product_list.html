@@ -1,0 +1,70 @@
+{% extends 'users/base.html' %}
+{% block title %}Products | {% endblock title %}
+
+{% block header %}
+<div class="pos-page-header">
+    <div>
+        <div class="section-eyebrow">{{ total_products }} products</div>
+        <h2>Products</h2>
+    </div>
+    <div class="pos-header-actions">
+        <a href="{% url 'products:category_list' %}" class="secondary-action">Manage Categories</a>
+        <a href="{% url 'products:add_category' %}" class="secondary-action">Add Category</a>
+        <a href="{% url 'products:add_product' %}" class="primary-action">Add Product</a>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+{% if categories %}
+    {% for group in categories %}
+    <div class="dashboard-section" style="margin-bottom: 1rem;">
+        <div class="section-header">
+            <h5>{{ group.category.name|default:"Uncategorized" }}</h5>
+            <span class="section-badge">{{ group.products|length }}</span>
+        </div>
+        <div class="history-table-wrapper">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Short Code</th>
+                        <th>SKU</th>
+                        <th>Cost</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in group.products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.short_code|default:"-" }}</td>
+                        <td>{{ product.sku|default:"-" }}</td>
+                        <td>Ksh. {{ product.cost_price|floatformat:2|intcomma }}</td>
+                        <td class="amount-cell">Ksh. {{ product.selling_price|floatformat:2|intcomma }}</td>
+                        <td>{% if product.is_low_stock %}<span class="low-stock">{{ product.stock_quantity }} (low)</span>{% else %}{{ product.stock_quantity }}{% endif %}</td>
+                        <td>{% if product.is_active %}Active{% else %}Inactive{% endif %}</td>
+                        <td class="actions-cell">
+                            <a href="{% url 'products:edit_product' product.id %}" class="view-btn">Edit</a>
+                            <a href="{% url 'products:delete_product' product.id %}" class="view-btn">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+<div class="history-table-wrapper">
+    <table class="history-table">
+        <tbody>
+            <tr class="empty-state"><td>No products yet.</td></tr>
+        </tbody>
+    </table>
+</div>
+{% endif %}
+{% endblock content %}

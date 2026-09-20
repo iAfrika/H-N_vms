@@ -1,0 +1,124 @@
+/* Appointments page styling */
+.appointments-container {
+    padding: 1rem;
+}
+
+.appointments-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.appointment-card {
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.appointment-card:hover {
+    border-color: var(--accent-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(17, 17, 17, 0.1);
+}
+
+.appointment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.appointment-client {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.appointment-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-scheduled {
+    background: var(--surface-muted);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.status-completed {
+    background: var(--surface-muted);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.status-cancelled {
+    background: var(--surface-muted);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.status-no_show {
+    background: var(--surface-muted);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.appointment-details {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.appointment-detail {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.detail-label {
+    color: var(--muted);
+    font-weight: 600;
+    min-width: 80px;
+}
+
+.appointment-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+}
+
+.btn-view-client {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.btn-view-client:hover {
+    background: var(--accent);
+    color: var(--surface);
+    border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .appointment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .appointment-details {
+        grid-template-columns: 1fr;
+    }
+}

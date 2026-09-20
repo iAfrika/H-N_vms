@@ -1,0 +1,108 @@
+/* Documents page styling */
+.documents-container {
+    padding: 1rem;
+}
+
+.documents-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.document-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.document-card:hover {
+    border-color: var(--accent-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(17, 17, 17, 0.1);
+}
+
+.document-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.document-title {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.document-type {
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.type-receipt {
+    background: var(--surface-muted);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.document-details {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.document-detail {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.detail-label {
+    color: var(--muted);
+    font-weight: 600;
+    min-width: 80px;
+}
+
+.document-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+}
+
+.btn-view,
+.btn-download {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.btn-view:hover,
+.btn-download:hover {
+    background: var(--accent);
+    color: var(--surface);
+    border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .document-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .document-details {
+        grid-template-columns: 1fr;
+    }
+}

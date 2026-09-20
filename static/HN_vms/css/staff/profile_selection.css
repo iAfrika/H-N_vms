@@ -1,0 +1,57 @@
+.profile-select-screen {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+.profile-select-screen h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+}
+.profile-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.profile-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 140px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.2s ease;
+}
+.profile-tile:hover {
+    transform: scale(1.08);
+}
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-tile:hover .profile-avatar {
+    border-color: var(--accent);
+}
+.profile-name {
+    font-weight: 600;
+}
+.profile-role {
+    font-size: 0.8rem;
+    color: var(--muted);
+}

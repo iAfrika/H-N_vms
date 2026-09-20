@@ -1,0 +1,404 @@
+/* Modern minimalist clients page styling */
+.clients-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.clients-header p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.clients-table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.clients-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.clients-table thead {
+    background: var(--surface-muted);
+    border-bottom: 2px solid var(--border);
+}
+
+.clients-table th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    white-space: nowrap;
+}
+
+.clients-table th:first-child {
+    border-top-left-radius: calc(var(--radius) - 1px);
+}
+
+.clients-table th:last-child {
+    border-top-right-radius: calc(var(--radius) - 1px);
+}
+
+.clients-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s ease;
+}
+
+.clients-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.clients-table tbody tr:hover {
+    background: var(--surface-muted);
+}
+
+.clients-table td {
+    padding: 1rem 1.2rem;
+    vertical-align: middle;
+}
+
+.clients-table td a {
+    color: var(--accent);
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.clients-table td a:hover {
+    color: var(--accent-soft);
+    text-decoration: underline;
+}
+
+.clients-table .status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.clients-table .status-active {
+    border-color: var(--border);
+}
+
+.clients-table .status-inactive {
+    border-color: var(--border);
+}
+
+.clients-table .status-pending {
+    border-color: var(--border);
+}
+
+.clients-table .points-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    background: var(--surface-muted);
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.clients-table .actions-cell {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.clients-table .view-btn {
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+
+.clients-table .view-btn:hover {
+    background: var(--accent);
+    color: var(--surface);
+    border-color: var(--accent);
+}
+
+.clients-table .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--muted);
+}
+
+.clients-table .empty-state td {
+    padding: 3rem 1rem;
+    font-size: 0.95rem;
+}
+
+.clients-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.clients-actions a {
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--accent);
+    color: var(--surface);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.clients-actions a:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent-soft);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .clients-table th,
+    .clients-table td {
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .clients-table th {
+        font-size: 0.7rem;
+    }
+
+    .clients-header p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Action icon buttons */
+.actions-cell {
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-decoration: none;
+}
+
+.action-btn:hover {
+    background: transparent;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.action-btn.action-delete:hover {
+    background: transparent;
+    border-color: var(--action-delete);
+    color: var(--action-delete);
+}
+
+.action-icon,
+.action-icon svg,
+.action-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    flex-shrink: 0;
+}
+
+/* Delete modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    width: min(400px, 90%);
+    box-shadow: var(--shadow);
+}
+
+.modal-content h5 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.modal-content p {
+    margin: 0 0 1.25rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.modal-actions .btn-secondary,
+.modal-actions .btn-danger {
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.15s ease;
+}
+
+.modal-actions .btn-secondary {
+    background: var(--surface-muted);
+    color: var(--text);
+}
+
+.modal-actions .btn-secondary:hover {
+    background: var(--border);
+}
+
+.modal-actions .btn-danger {
+    background: var(--action-delete);
+    color: var(--surface);
+    border-color: var(--action-delete);
+}
+
+.modal-actions .btn-danger:hover {
+    opacity: 0.9;
+}
+
+/* Client detail card */
+.client-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.client-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.client-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--surface);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.client-card-title h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.client-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.client-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.client-info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.client-info-value {
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.client-actions-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.client-actions-bar a,
+.client-actions-bar button {
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-muted);
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.client-actions-bar a:hover,
+.client-actions-bar button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--surface);
+}

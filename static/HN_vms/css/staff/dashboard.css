@@ -1,0 +1,269 @@
+.staff-dashboard {
+    width: 100%;
+}
+
+.staff-dash-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.dash-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+}
+
+.dash-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.dash-card-header h5 {
+    margin: 0 0 0.2rem 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.dash-subtitle {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--muted);
+}
+
+.dash-hero-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0.5rem 0 1rem;
+}
+
+.dash-mini-stats {
+    margin-bottom: 1rem;
+}
+
+.dash-mini-stats strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.dash-mini-stats span {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.dash-mini-stats b {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.dash-chart-wrap {
+    flex: 1;
+    min-height: 220px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.dash-legend {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.legend-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0.35rem;
+}
+
+.sales-dot { background: var(--accent); }
+.appointments-dot { background: var(--action-add); }
+
+.dash-menu {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0.2rem;
+}
+
+.dash-menu:hover {
+    color: var(--text);
+}
+
+.chart-period-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--surface-muted);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.2rem;
+    flex-shrink: 0;
+}
+
+.chart-period-btn {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chart-period-btn:hover {
+    color: var(--text);
+}
+
+.chart-period-btn.active {
+    background: var(--accent);
+    color: var(--surface);
+}
+
+.dash-empty {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    color: var(--muted);
+}
+
+.dash-empty-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.dash-empty h6 {
+    margin: 0;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.dash-empty p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.dash-empty a {
+    color: var(--accent);
+}
+
+.dash-apt-list,
+.dash-activity-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.dash-apt-item,
+.dash-activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.dash-apt-item:last-child,
+.dash-activity-item:last-child {
+    border-bottom: none;
+}
+
+.dash-apt-date,
+.dash-activity-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.dash-apt-day,
+.dash-activity-day {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.dash-apt-mon,
+.dash-activity-mon {
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.dash-apt-body,
+.dash-activity-body {
+    flex: 1;
+}
+
+.dash-apt-time,
+.dash-activity-meta span:first-child {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+}
+
+.dash-apt-title,
+.dash-activity-title {
+    font-weight: 700;
+    margin: 0.15rem 0;
+    font-size: 0.95rem;
+}
+
+.dash-apt-client,
+.dash-activity-client {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+.dash-apt-status,
+.dash-activity-status {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    background: var(--surface-muted);
+    color: var(--text);
+    border: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.dash-activity-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.2rem;
+}
+
+@media (max-width: 900px) {
+    .staff-dash-grid {
+        grid-template-columns: 1fr;
+    }
+}

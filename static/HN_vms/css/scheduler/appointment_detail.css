@@ -1,0 +1,326 @@
+/* Appointment detail - modern minimalist cards */
+.appointment-detail-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.appointment-detail-container .appointment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.appointment-detail-container .appointment-title h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.55rem;
+    font-weight: 700;
+}
+
+.appointment-detail-container .appointment-subtitle {
+    margin: 0.35rem 0 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.appointment-detail-container .appointment-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.appointment-detail-container .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    flex: 0 0 auto;
+    width: auto;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.appointment-detail-container .btn i,
+.appointment-detail-container .btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.appointment-detail-container .btn-secondary:hover {
+    background: var(--surface-muted);
+    border-color: var(--accent-soft);
+}
+
+.appointment-detail-container .btn-danger {
+    border-color: var(--action-delete);
+    color: var(--action-delete);
+}
+
+.appointment-detail-container .btn-danger:hover {
+    background: var(--action-delete);
+    color: var(--surface);
+}
+
+.appointment-detail-container .btn-success {
+    border-color: var(--action-add);
+    color: var(--action-add);
+}
+
+.appointment-detail-container .btn-success:hover {
+    background: var(--action-add);
+    color: var(--surface);
+}
+
+.appointment-detail-container .btn-primary {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.appointment-detail-container .btn-primary:hover {
+    background: var(--accent);
+    color: var(--surface);
+}
+
+.appointment-detail-container .btn-sm {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+}
+
+.appointment-detail-container .appointment-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    overflow: hidden;
+}
+
+.appointment-detail-container .info-card {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.35rem 1.5rem;
+}
+
+.appointment-detail-container .info-card.appointment-info-grid {
+    padding: 0;
+}
+
+.appointment-detail-container .info-section {
+    min-width: 0;
+    padding: 1.5rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.appointment-detail-container .info-section:nth-child(2n) {
+    border-right: none;
+}
+
+.appointment-detail-container .info-section:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+.appointment-detail-container .info-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.appointment-detail-container .info-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1rem 0;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.appointment-detail-container .info-card h3 i,
+.appointment-detail-container .info-card h3 svg {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
+}
+
+.appointment-detail-container .info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.appointment-detail-container .info-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.appointment-detail-container .info-label {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.appointment-detail-container .info-value {
+    color: var(--text);
+    font-weight: 600;
+    text-align: right;
+}
+
+.appointment-detail-container .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: transparent;
+    border: 1px solid currentColor;
+    text-transform: capitalize;
+}
+
+.appointment-detail-container .status-badge::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.appointment-detail-container .status-scheduled { color: var(--action-share); }
+.appointment-detail-container .status-confirmed { color: var(--action-add); }
+.appointment-detail-container .status-completed { color: var(--accent); }
+.appointment-detail-container .status-cancelled { color: var(--action-delete); }
+.appointment-detail-container .status-no_show { color: var(--accent-soft); }
+
+.appointment-detail-container .reminders-section,
+.appointment-detail-container .messages-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.35rem 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.appointment-detail-container .reminders-section h3,
+.appointment-detail-container .messages-section h3 {
+    margin: 0 0 1rem 0;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.appointment-detail-container .reminders-list,
+.appointment-detail-container .messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.appointment-detail-container .reminder-card,
+.appointment-detail-container .message-card {
+    background: var(--surface-muted);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) - 8px);
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.2s ease;
+}
+
+.appointment-detail-container .reminder-card:hover,
+.appointment-detail-container .message-card:hover {
+    background: var(--surface);
+    border-color: var(--accent-soft);
+}
+
+.appointment-detail-container .reminder-type,
+.appointment-detail-container .message-type {
+    font-weight: 600;
+    color: var(--text);
+    min-width: 70px;
+    font-size: 0.85rem;
+}
+
+.appointment-detail-container .reminder-time,
+.appointment-detail-container .message-subject {
+    flex: 1;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.appointment-detail-container .reminder-status,
+.appointment-detail-container .message-status {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid currentColor;
+    text-transform: capitalize;
+}
+
+.appointment-detail-container .status-sent { color: var(--action-add); }
+.appointment-detail-container .status-pending { color: var(--accent-soft); }
+.appointment-detail-container .status-failed { color: var(--action-delete); }
+.appointment-detail-container .status-draft { color: var(--muted); }
+
+.appointment-detail-container .action-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.appointment-detail-container .no-data {
+    color: var(--muted);
+    font-style: normal;
+    padding: 0.5rem 0 1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .appointment-detail-container .appointment-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .appointment-detail-container .appointment-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-detail-container .info-section {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .appointment-detail-container .info-section:last-child {
+        border-bottom: none;
+    }
+
+    .appointment-detail-container .reminder-card,
+    .appointment-detail-container .message-card {
+        flex-wrap: wrap;
+    }
+}

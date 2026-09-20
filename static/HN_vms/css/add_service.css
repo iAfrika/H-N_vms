@@ -1,0 +1,66 @@
+/* Minimalist add service styling */
+.service-form-container {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.service-form-container form {
+    display: grid;
+    gap: 1rem;
+}
+
+.service-form-container p {
+    margin: 0;
+}
+
+.service-form-container label {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.service-form-container input,
+.service-form-container select,
+.service-form-container textarea {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.service-form-container button {
+    width: 100%;
+    margin-top: 0.5rem;
+    background: var(--accent);
+    color: var(--surface);
+}
+
+.service-form-container button:hover {
+    background: var(--accent-soft);
+}
+
+.service-form-container a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.service-form-container a:hover {
+    color: var(--accent);
+}
+
+.errorlist {
+    color: var(--action-delete);
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+@media (max-width: 680px) {
+    .service-form-container {
+        max-width: 100%;
+    }
+}

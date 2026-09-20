@@ -1,0 +1,125 @@
+.message-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filters-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filters-form {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.filter-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.filter-group select {
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface-muted);
+    color: var(--text);
+    min-width: 150px;
+}
+
+.messages-table-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.messages-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.messages-table th,
+.messages-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.messages-table th {
+    background: var(--surface-muted);
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.messages-table tr:hover {
+    background: var(--surface-muted);
+}
+
+.type-badge, .direction-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: var(--surface-muted);
+    color: var(--text);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-badge.status-draft { background: var(--surface-muted); color: var(--text); border: 1px solid var(--border); }
+.status-badge.status-sent { background: var(--surface-muted); color: var(--text); border: 1px solid var(--border); }
+.status-badge.status-delivered { background: var(--surface-muted); color: var(--text); border: 1px solid var(--border); }
+.status-badge.status-failed { background: var(--surface-muted); color: var(--action-delete); border: 1px solid var(--action-delete); }
+
+.action-buttons {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.page-info {
+    padding: 0.5rem 1rem;
+    color: var(--muted);
+}
+
+.no-data {
+    text-align: center;
+    padding: 3rem;
+    color: var(--muted);
+}
+
+.no-data p {
+    margin-bottom: 1rem;
+}
